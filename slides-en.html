@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Generative Art with Processing</title>
+  <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
+  <link rel="shortcut icon" href="framework/img/favicon.ico">
+
+  <!-- Takes care of CSS3 prefixes -->
+  <script src="framework/scripts/prefixfree.min.js"></script>
+
+  <!-- opens all links in a new window -->
+  <base target="_blank">
+</head>
+
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body class="en" data-duration="360">
+
+  <main>
+    <section class="slide welcome highlight">
+      <h1><img class="logo-stacked" src="framework/img/codemobilelogo.png" alt="Ladies Learning Code logo">Welcome!</h1>
+
+      <div class="instructions">
+        <!-- ADD WIFI INFO HERE -->
+        <h2>Get <br>Connected</h2>
+        <p><strong>Wifi:</strong> Wifi Network</p>
+        <p><strong>Password:</strong> Wifi Password</p>
+        <hr>
+        <h2>Create a<br>Project</h2>
+        <p>Open <a href="https://editor.p5js.org">editor.p5js.org</a></p>
+        <p>Optional: Click <strong>Sign Up</strong> to create an account</p>
+        <hr>
+        <h2>Get <br>Familiar</h2>
+        <p>Go to <a href="showcase.p5js.org">showcase.p5js.org</a></p>
+        <p>Check out some examples made with JavaScript and p5js</p>
+      </div>
+
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Slides created by <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section>
+
+    <section class="slide intro">
+      <h1 class="heading-bg">
+        <span>Generative Art<br>
+        with JavaScript</span>
+      </h1>
+
+      <ul>
+        <li><a href="http://twitter.com/learningcode">@learningcode</a></li>
+        <li><a href="https://twitter.com/search?q=%23kidslearningcode&src=typd">#codemobile</a></li>
+      </ul>
+      <!--
+      <div class="sponsor">
+        <p>In partnership with<br> <img src="framework/img/telus-logo-white.svg" alt="Telus"></p>
+      </div>
+      -->
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content created by Kassandra Lenters &amp; Kat Barrett, revisions by Steve Blair for <a prefix="cc: http://creativecommons.org/ns#" href="http://canadalearningcode.ca" property="cc:attributionName" rel="cc:attributionURL">Canada Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Introductions
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Getting Started with Zoom
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Zoom: Muting and Unmuting
+        ![To mute and unmute yourself in Zoom, click the microphone button at the bottom left of your screen. The redline means you're muted. The same goes for your webcam.](framework/img/workshop/zoom-mute.png)
+       </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Zoom: How to Chat
+        ![You can access Zoom's Chat feature by clicking on the button in the bottom right side of your screen. Use this if you have a question or something to share with the group!](framework/img/workshop/zoom-chat.png)
+       </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Zoom: Raising Your Hand
+        ![To raise your virtual hand, start by clicking on the Participants button.](framework/img/workshop/zoom-participants.png)
+       </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Zoom: Raising Your Hand
+        ![At the bottom of the Participants window, you can find the Raise Hand button. Try it now! You can also answer yes or no using the buttons next to raise hand.](framework/img/workshop/zoom-hand.png)
+       </script>
+    </section>
+
+    <!-- <section class="slide" data-markdown>
+      <script type="text/template">
+        # Table of Contents
+
+        <div class="table-of-contents"></div>
+       </script>
+    </section> -->
+
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+       ![Coders Code Banner](framework/img/workshop/scroll.png)
+         ## 1. Be friendly and welcoming
+         ## 2. Be mindful of how much space you take up in conversations
+         ## 3. Be respectful of others by choosing words and actions with care
+         ## 4. Ask questions
+         ## 5. Take care of your body
+         ## 6. No photos or audio/video recordings
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Land Acknowledgement
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Ice Breaker
+        ##Let's get to know each other!
+      </script>
+    </section>
+
+     <section class="slide title" data-markdown>
+      <script type="text/template">
+        # Today's Project
+        ## We're learning how to create<br> generative art with Processing
+      </script>
+    </section>
+
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        #Today's Project
+        <iframe src="framework/processing-projects/project-1.html" width="500" height="500"></iframe>
+
+        Click and drag to see what happens
+      </script>
+    </section>
+
+    <section class="slide title" data-toc data-markdown>
+     <script type="text/template">
+       # What is Code?
+     </script>
+    </section>
+
+    <section class="slide" data-markdown data-toc>
+      <script type="text/template">
+        #Code is...
+
+        **...a set of instructions that tell a computer what to do**.
+
+        In code, we call a set of instructions an *algorithm*
+
+        <ul>
+          <li class="delayed">Computers don’t understand the way humans talk</li>
+          <li class="delayed">They only understand a specific kind of language: computer, or “programming” languages</li>
+          <li class="delayed">Computer languages are written in code</li>
+          <li class="delayed">There are lots of computer languages!</li>
+        </ul>
+
+      </script>
+    </section>
+
+    <section class="slide title" data-toc data-markdown>
+      <script type="text/template">
+        # What is Generative Art?
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Generative Art
+
+        * Artwork that is created with code
+        * Often uses mathematical operations `+ - * /`
+        * Generates or changes over time
+
+        The process embraces **experimentation** and **happy accidents** in a way that reshapes the role of the artist.
+
+        ![http://giphy.com/gifs/processing-hypercube-phxXlMiXA1Xjy](framework/img/workshop/shapeshift.gif)
+        ![http://giphy.com/gifs/processing-attempt-kinematics-ini6gpWb8ZbQ4](framework/img/workshop/bounce.gif)
+        ![http://giphy.com/gifs/art-animated-loop-GXo1dHx8txq4o](framework/img/workshop/turn.gif)
+
+
+        ---
+        <div class="dropdown">
+          <button class="dropbtn">Attributions</button>
+          <div class="dropdown-content">
+            <a href="http://giphy.com/gifs/processing-hypercube-phxXlMiXA1Xjy">Processing gif</a>
+            <a href="http://giphy.com/gifs/processing-attempt-kinematics-ini6gpWb8ZbQ4">Kinematics gif</a>
+            <a href="http://giphy.com/gifs/art-animated-loop-GXo1dHx8txq4o">Turning gif</a>
+          </div>
+
+      </script>
+    </section>
+
+     <section class="slide" data-markdown>
+      <script type="text/template">
+        #Generative Art Examples
+
+        ##<a href="http://www.galaxykate.com/apps/Prototypes/LTrees/">LTrees</a> by <a href="http://www.galaxykate.com/">Kate Compton</a>
+
+        <video controls width="800" src="framework/videos/ltrees.mov">
+          Something went wrong, try opening the video file from the slides folder in framework/videos/ltrees.mov
+        </video>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Generative Art Examples
+
+        ##Wobbly Swarm by <a href="https://www.openprocessing.org/user/56835">Konstantin Makhmutov</a>
+
+        <button style="display: block; margin-top: 1em" onclick="document.getElementById('wobbly-swarm').src = document.getElementById('wobbly-swarm').src">Refresh</button>
+
+        <iframe id="wobbly-swarm" src="framework/processing-projects/example-wobbly-swarm.html" width="800" height="500"></iframe>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Generative Art Examples
+
+        ##Quilts & Textiles by <a href="https://www.libselliott.com/">Libs Elliott</a>
+
+        <img src="framework/img/workshop/libs-elliott.jpeg" width="400" style="vertical-align: top">
+        <img src="framework/img/workshop/libs-elliott-ts1.jpeg" width="400" style="vertical-align: top">
+        <img src="framework/img/workshop/libs-elliott-2.jpg" width="400" style="vertical-align: top">
+      </script>
+    </section>
+
+    <section class="slide title" data-toc data-markdown>
+      <script type="text/template">
+        # What is Processing?
+      </script>
+    </section>
+
+    <section class="slide two-col-list" data-markdown>
+      <script type="text/template">
+      # Processing
+      * Why Processing?
+        * A coding language created for artists &amp; designers
+        * Open source and free to use
+        * Creates pictures or animations
+        * Used to visually represent data
+        * Can produce exact shapes and patterns
+      * ![http://giphy.com/gifs/processing-creative-coding-openprocessing-jk9L41aToGZQA](framework/img/workshop/sun.gif)
+
+        ---
+        <div class="dropdown">
+          <button class="dropbtn">Attributions</button>
+          <div class="dropdown-content">
+            <a href="http://giphy.com/gifs/processing-creative-coding-openprocessing-jk9L41aToGZQA">Sun gif</a>
+          </div>
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      # Processing Language Variations
+      
+      We'll be using a variation of Processing called **p5.js**
+
+      With Processing being open source software, the community has built a number of variations by combining the original verstion with other programming languages.
+
+      With p5.js we'll actually be learning to write our code in **Javascript**, a very popular language used on the web.
+
+      You can learn more about the original version of Processing and the other variations on <a href="https://processing.org/">processing.org</a>
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #How Does p5js Make Art?
+
+        * p5js programs are called **sketches**
+        * <!-- .element: class="delayed" -->To see the artwork in our sketch, we need a **canvas** to draw it onto
+        * <!-- .element: class="delayed" -->Instead of drawing like us humans by moving a pencil with our hands, p5js draws exact shapes, called **primitives**, onto our canvas
+        * <!-- .element: class="delayed" -->We tell p5js where to draw our shapes and what size to make them using **pixels**
+        * <!-- .element: class="delayed" -->If we want an animation instead of just a picture, we can tell p5js to change the drawing over and over, super fast in a **loop**!
+
+      </script>
+    </section>
+
+    <section class="slide title" data-toc data-markdown>
+      <script type="text/template">
+        #Coding Concept Time!
+      </script>
+    </section>
+
+    <!--<section class="slide two-col-list" data-markdown>
+      <script type="text/template">
+      # **Coding Concept:** Functions
+      * A function is...
+        * A name for a set of instructions, like *wave your hand*
+        * Processing has a lot of built-in functions like **setup**, **draw**, **line**, and **background**
+        * It is already programmed to know what these mean
+        * Functions save us time and make our code easier to read!
+      * ```
+        wave your hand at person:
+          1. turn towards person
+          2. raise your arm
+          3. spread your fingers
+          4. bend your forearm left
+          5. bend your forearm right
+          6. bend your forearm left
+          7. bend your forearm right
+        ```
+        ```
+        wave your hand at the instructor
+        wave your hand at your friend
+        ```
+      </script>
+    </section>-->
+
+    <section class="slide two-col-list" data-markdown>
+      <script type="text/template">
+      # **Coding Concept:** Sequence
+
+      Order matters!
+
+      ``` JavaScript
+      function setup() {
+        // This happens one time, at the very beginning
+      }
+      ```
+
+      ``` JavaScript
+      function draw() {
+        // This happens multiple times, over and over in a loop!
+        // First this
+        // Then this
+        // ...and so on
+        // Now do it again!
+      }
+      ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      # **Coding Concept:** Syntax
+
+      **Syn-*what?***
+
+      Syntax is the set of rules for a language. We follow the syntax rules of English whenever we write or talk...
+
+      Try reading this: `hello? HOW ARE YOU TODAY!`
+      
+      How about: `Hello! How are you today?`
+
+      With computers, we have to follow the rules perfectly or they'll get confused and not know what we mean!
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      # **Coding Concept:** Syntax
+
+      JavaScript has a few rules we need to follow:
+
+      1. Don't mix up capitals and lowercase - `setup` isn't the same as `Setup`
+      1. Functions have parentheses after their names - `draw()`
+      1. Parentheses `()` and curly brackets `{}` always come in pairs
+      1. Every line of code ends with a semicolon `;` - `someCode();`
+      <br>*...unless it already ends with a curly bracket* `someCode() {`
+
+      JavaScript doesn't care about extra spaces before our code though. That's just for us, and it makes it easier for our human brains to read!
+
+      ``` JavaScript
+      outer layer {
+        inner layer {
+          code!
+        }
+      }
+      ```
+
+      </script>
+      }
+    </section>
+
+    <section class="slide title" data-toc data-markdown>
+      <script type="text/template">
+        #LET'S GET CODING!
+      </script>
+    </section>
+
+    <section class="slide" data-toc data-markdown>
+      <script type="text/template">
+        # P5js Online Editor
+
+        Open [**editor.p5js.org**](https://editor.p5js.org)
+
+        * Preview your sketch by pressing the **play (▶)** button
+        <br>
+        *Don't worry, all you should see is a blank grey square on the right*
+        * Turn on **Auto-refresh** by checking the box
+        * Make sure to **rename your sketch**!
+
+        ![settings](framework/img/workshop/p5-editor.png)
+
+      </script>
+    </section>
+
+    <section class="slide centered" data-markdown>
+      <script type="text/template">
+        #Reminder: Today's Project
+        <iframe src="framework/processing-projects/project-1.html" width="500" height="500"></iframe>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      # The Setup
+
+      ``` Javascript
+      function setup() {
+        createCanvas(400, 400);
+      }
+      ```
+
+      Tell the computer we want it to create a canvas using the built-in function `createCanvas`
+      
+      We set the size of our new canvas with a **width** and **height** inside the parentheses `(width, height)`
+      
+      *Remember: ```setup``` only happens once at the very beginning*
+      
+      * Try making your canvas **bigger** or **smaller** by changing the numbers
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      # Draw Something
+
+      ``` JavaScript
+      function draw() {
+        background(220);
+      }
+      ```
+
+      When we clicked the play (▶) button a grey square appeared. Boring!
+      
+      * Let's draw a shape...
+
+      ``` JavaScript
+      function draw() {
+        background(220);
+        ellipse(100, 200, 300, 400);
+      }
+      ```
+      What shape do you see in your sketch now?
+
+      </script>
+    </section>
+
+    <section class="slide two-col-list" data-markdown>
+      <script type="text/template">
+        #Meet Your New Best Friend
+
+        * The p5.js Reference!
+          * Open <a href="https://p5js.org/reference">p5js.org/reference</a> in your browser in a new tab
+          ![http://giphy.com/gifs/friends-friendship-bff-3oEdvaba4h0I536VYQ](framework/img/workshop/bff.gif)
+        * Challenge:
+          1. Find `ellipse()` in the reference
+          1. Figure out what each of the numbers between the parenthese do `(?, ?, ?, ?)`
+          1. Change your oval to be a perfect circle. There are 3 different ways to do it!
+
+          ---
+          <div class="dropdown">
+            <button class="dropbtn">Attributions</button>
+            <div class="dropdown-content">
+              <a href="http://giphy.com/gifs/friends-friendship-bff-3oEdvaba4h0I536VYQ">High Five gif</a>
+            </div>
+
+      </script>
+    </section>
+
+    <section class="slide two-col-list" data-markdown>
+      <script type="text/template">
+        # X and Y Coordinates
+
+        * How does p5js know where to draw our shape?
+          * X is how many pixels from the left
+          * Y is how many pixels from the top
+        * ![a diagram showing the attributes of an ellipse](framework/img/workshop/canvas.png)
+
+        ##Can you move your ellipse to the centre of the canvas?
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      # Drawing Shapes
+
+      ##Circles and Ovals
+      ```ellipse(x, y, width, height);```
+
+      * X and Y are at the center of the circle, and it grows out from there
+
+      ![a diagram showing the attributes of an ellipse](framework/img/workshop/ellipse.png)
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Colours
+
+        p5js can understand simple colour names like `blue` or `pink`, but not every single colour has a name. We can tell it exactly what colour we want using **RGB**!
+
+        * RGB stands for...?
+
+        <div><p><strong style="color:firebrick;">Red</strong>, <strong style="color:forestgreen;">Green</strong>, and <strong style="color:dodgerblue;">Blue</strong></p>
+
+        <p>Open <a href="https://www.google.com/search?q=colour+picker">Google's Colour Picker</a> in a new tab. <br>*You can also just search "colour picker" on Google to find it anytime*</p>
+
+        What is the largest number we can use for either R, G, or B?
+
+        What colour is (0, 0, 0)?</div><!-- .element: class="delayed" -->
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #But Wait!
+
+        ```background(220);``` only has one number, not three!
+
+        This is just a faster way of writing ```background(220, 220, 220);```
+
+        * If red, green, and blue are all equal, what kind of colours do we get?
+
+
+        * Change the background colour using the R, G, and B numbers from colorpicker.me
+
+        ```JavaScript
+        function draw() {
+          background(145, 42, 126);
+          ellipse(100, 100, 100, 100);
+        }  
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #More Colour
+
+        Our ellipse is still white, but we can change its colour too
+
+        Instead of ```background``` we use ```fill```
+
+        ```JavaScript
+        function draw() {
+          background(145, 42, 126);
+          fill(26, 94, 37); // so beautiful!
+          ellipse(100, 100, 100, 100);
+        }  
+        ```
+
+        * Can you use the **Reference** to find the code that will change the black line around our ellipse to another colour?
+
+        <p>We can use ```stroke``` to change the colour of the outline!</p><!-- .element: class="delayed" -->
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # **Coding Concept:** Comments
+
+        As your sketch gets longer and more complicated, it can be easy to forget what every line of code does. We can add comments to our code though to help with that, and Processing will just ignore them!
+
+        Comments can be on their own line:
+        ```JavaScript
+        }
+        // this erases the ellipses when we press a key
+        if(keyIsPressed) {
+        ```
+        
+        ...or at the end of a line of code:
+        ```JavaScript
+        background(145, 42, 126); // purpley-pink colour
+        fill(252, 186, 3); // bright orange
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # **Coding Concept:** Variables
+
+        A variable is like a box! It stores information for us
+
+        We can use variables to keep track of things in our sketch
+
+        ![A cardboard box to represent the concept of variables](framework/img/workshop/box.png)
+
+        p5js has a bunch of variables ready for us to use, but we may also create our own later on!
+
+        ---
+        <div class="dropdown">
+          <button class="dropbtn">Attributions</button>
+          <div class="dropdown-content">
+            <a href="https://pixabay.com/en/box-open-cardboard-box-cardboard-152428/">Box image</a>
+          </div>
+        </div>
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Make It Move
+        
+        We can replace any number in our code with a **variable**
+
+        p5js has a whole bunch of variables ready for us to use like ```mouseX``` and ```mouseY```
+
+        ``` JavaScript
+        function draw() {
+          background(145, 42, 126);
+          fill(26, 94, 37);
+          stroke(1, 209, 229);
+          ellipse(mouseX, mouseY, 100, 100);
+        }
+        ```
+
+        * Where is the computer going to draw our ellipse?
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Paintbrush
+
+        JavaScript runs the instructions in ```draw``` over and over and over...
+
+        * So why do we only see 1 ellipse instead of *1 bazillion* ellipses?
+
+        Our code tells the computer:
+
+        1. Colour the entire sketch using the ```background``` colour
+        1. Set the shape colours using ```fill``` and ```stroke```
+        1. Draw a shape using ```ellipse```
+        1. That's the end of the instructions, so go back up to step 1
+
+
+        * If we only wanted the computer to colour the entire sketch once, where could we move our ```background``` code?
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Paintbrush
+
+        Let's move our ```background``` to the ```setup``` so we can see all the ellipses!
+
+        ``` JavaScript
+        function setup() {
+          createCanvas(400, 400);
+          background(145, 42, 126);
+        }
+
+        function draw() {
+          fill(26, 94, 37);
+          stroke(1, 209, 229);
+          ellipse(mouseX, mouseY, 100, 100);
+        }
+        ```
+
+        * If you fill the sketch with ellipses and want to start again, just click the play (▶) button
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # **Coding Concept:** Conditional Statements
+
+        **Conditional statements** are what computers use to make decisions based on the conditions we give them
+
+        * <strong>If</strong> it is raining... then grab your umbrella.
+        * <strong>If</strong> you are hungry... then have a snack.
+
+        <div><p style="color:#ef0919">Create your own!</p>
+        <p style="color:#ef0919">If *something happens*... *then do this* </p></div><!-- .element: class="delayed" -->
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Paintbrush with a Conditional Statement
+
+        * Let's tell the computer to only draw our ellipses when the mouse button is pressed down using a **conditional statement**
+
+        ``` JavaScript
+        function draw() {
+          if(mouseIsPressed) {
+            fill(26, 94, 37);
+            stroke(1, 209, 229);
+            ellipse(mouseX, mouseY, 100, 100);
+          }
+        }
+        ```
+
+        ```mouseIsPressed``` is another variable in Processing, but instead of a storing a number, it only stores either the word ```true``` or ```false```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Keyboard Buttons Can Be Pressed Too!
+
+        But what if we want to start over without pressing the play (▶) button?
+
+        Challenge:
+
+        * If any key on the keyboard is pressed, erase all of the ellipses
+
+        Hints:
+
+        1. <!-- .element: class="delayed" -->Look in the reference near `mouseIsPressed` for something similar, but for a key instead of a mouse
+        1. <!-- .element: class="delayed" -->We'll need a conditional statement to check if a key is being pressed
+        1. <!-- .element: class="delayed" -->We can erase everything with `clear()`, but what if we want to keep our background colour?
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Possible Solution:
+
+        ``` JavaScript
+        function setup() {
+          createCanvas(400, 400);
+          background(145, 42, 126);
+        }
+
+        function draw() {
+          if(mouseIsPressed) {
+            fill(26, 94, 37);
+            stroke(1, 209, 229);
+            ellipse(mouseX, mouseY, 100, 100);
+          }
+          
+          if(keyIsPressed) {
+            background(145, 42, 126);
+          }
+        }
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide two-col-list" data-markdown>
+      <script type="text/template">
+        # **Coding Concept:** That's So Random!
+        * ![http://giphy.com/gifs/cute-space-kawaii-3o7TKCTt7cNHg10utO](framework/img/workshop/taco.gif)
+        * Computers can generate random numbers:
+          * p5js has a function called `random()` - easy to remember!
+          * `random(10)` can pick from 0-9
+          * `random(1, 11)` picks from 1-10
+          * We can put a random number in a variable like this `myWidth = random(50, 150);`
+          * We're going to set our `fill` to be random. What was the biggest number that R, G, and B can be?
+
+
+          ---
+          <div class="dropdown">
+            <button class="dropbtn">Attributions</button>
+            <div class="dropdown-content">
+              <a href="http://giphy.com/gifs/cute-space-kawaii-3o7TKCTt7cNHg10utO">Taco gif</a>
+            </div>
+
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Random Taps!
+
+        Imagine I was a computer and you could control how many times I tap my nose with `tapNose()`...
+
+        ```JavaScript
+        function setup() {
+          raiseFingerToNose();
+        }
+
+        function draw() {
+          tapNose(random(1, 11)); // put a random number between 1-10 in "taps"
+        }
+
+        ```
+
+        Note when we put `random(1, 11)` inside `tapNose();` we have two sets of parentheses that need to open and close
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Random Sizes and Colours
+
+        Since we can replace any number in our sketch with `random()`, let's think of ways we could use it...
+
+        What would `ellipse(mouseX, mouseY, random(101), 100);` do?
+
+        What about `fill(0, 0, random(200, 256));`?
+
+        Are there other places we can use `random()`?
+
+        *Remember to keep double-check your **parentheses** and **commas** are all in the right places!*
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Possible Solution:
+
+        ``` JavaScript
+        function setup() {
+          createCanvas(400, 400);
+          background(145, 42, 126);
+        }
+
+        function draw() {
+          if(mouseIsPressed) {
+            fill(0, 0, random(200, 256));
+            stroke(1, 209, 229); // All of these numbers could be random
+            ellipse(mouseX, mouseY, random(101), 100); // We could replace mouseX and mouseY with random numbers
+          }
+          
+          if(keyIsPressed) {
+            background(145, 42, 126); // More numbers that could be random!
+          }
+        }
+        ```
+      </script>
+    </section>
+
+    <section class="slide two-col-list" data-markdown>
+      <script type="text/template">
+        # Almost Done!
+
+        * The example sketch:
+          <iframe src="framework/processing-projects/project-1.html" width="500" height="500"></iframe>
+        * What's different from ours?
+          * The way the size changes isn't quite the same 🤔
+          * The colours change a lot too... maybe it needs more than one random number in `fill()`?
+        * Other things to try:
+          * Set the X and Y with random numbers
+          * Set the width and height with mouseX or mouseY
+          * Can you draw rectangles? Check the <a href="https://p5js.org/reference/#group-Shape">refererence</a> for other shapes
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Stretch Goal: Let's Create Our Own Variables
+
+        Our ellipsis moves with the built-in variables `mouseX` and `mouseY` but we can create our own variables to change things too!
+
+        When we create variables, they usually go at the very *tippity-top* of the code before `function setup() {` and look like this:
+
+        ```JavaScript
+        let myVariable = 200;
+
+        function setup() {
+        ...
+        ```
+
+        Once we've created a variable, we can change the value anywhere in our code using math like this:
+
+        ```JavaScript
+        myVariable = myVariable * 2;
+        ```        
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Stretch Goal: Let's Create Our Own Variables
+
+        Imagine I was a computer and you could control how many times I tap my nose with a variable...
+
+        ```JavaScript
+        let taps = 0; // create a variable called "taps" and put the number 0 in it
+
+        function setup() {
+          raiseFingerToNose(); // tapping finger ready...
+        }
+
+        function draw() {
+          tapNose(taps); // tap nose "taps" times
+          taps = taps + 1; // change the number in "taps" by adding 1 to it
+        }
+
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Stretch Goal: Make it Grow!
+
+        1. Create a new variable - it's going to make your ellipses get bigger so give it a meaningful name like `size` or `grow`. 
+
+          Remember to put it before ```function setup() {``` and it should look something like ```let myVariable = ...```
+        
+        1. Put a small number in your variable
+        
+        1. Replace the width or height (or both!) of your ellipses with the variable
+        
+        1. Change the number in your variable using math, but make sure Processing does it over and over and over...
+        
+        1. Put the small number back in your variable when a key gets pressed
+
+        Tip: You can **comment out** the conditional statement for `mouseIsPressed` to more easily see if your ellipse is growing the way you want it to
+
+        ```JavaScript
+        // if(mouseIsPressed) {
+          fill(26, 94, 37);
+          ...
+        // }
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Stretch Goal: Possible Solution:
+
+        ``` JavaScript
+        let grow = 10; // Create a new variable and put the number 10 in it
+
+        function setup() {
+          createCanvas(400, 400);
+          background(145, 42, 126);
+        }
+
+        function draw() {
+          if(mouseIsPressed) {
+            fill(26, 94, 37);
+            stroke(1, 209, 229);
+            ellipse(mouseX, mouseY, grow, 100); // Use the variable to set the width
+            grow = grow + 10; // Add 10 to the number in the variable
+          }
+          
+          if(keyIsPressed) {
+            background(145, 42, 126);
+            grow = 10; // Put the number 10 in the variable
+          }
+        }
+        ```
+
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #DEMOS
+      </script>
+    </section>
+
+
+      <section class="slide" data-toc data-markdown>
+        <script type="text/template">
+          # Today I Learned...
+
+          <p><strong>I can</strong> create algorithms in JavaScript</p><!-- .element: class="delayed" -->
+          <p><strong>I can</strong> draw shapes using x,y coordinates</p><!-- .element: class="delayed" -->
+          <p><strong>I can</strong> use conditionals to make my project interactive</p><!-- .element: class="delayed" -->
+          <p><strong>I can</strong> use variables to track and change things in my project</p><!-- .element: class="delayed" -->
+          <p><strong>I can</strong> use P5.js to KEEP CODING!</p><!-- .element: class="delayed" -->
+
+        </script>
+      </section>
+
+      <section class="slide" data-toc data-markdown>
+        <script type="text/template">
+          # Next Steps
+
+          Check out the P5.js examples: <a href="https://p5js.org/examples/">p5js.org/examples</a>
+          
+          Try more P5.js lessons: <a href="https://p5js.org/learn/">p5js.org/learn</a>
+          
+          Watch Daniel Shiffman's *Coding Train* series: <a href="https://www.youtube.com/user/shiffman">youtube.com/user/shiffman</a>
+          
+          See what the community is making with Processing: <a href="https://www.openprocessing.org/">openprocessing.org</a>
+
+        </script>
+      </section>
+
+    <!-- Last slide -->
+    <section class="slide last">
+      <h1>Thank you!</h1>
+      <h2 class="heading-bg">
+        <span>Generative Art <br>with JavaScript</span>
+      </h2>
+
+      <ul>
+        <li><a href="http://twitter.com/learningcode">@learningcode</a></li>
+        <li><a href="https://twitter.com/search?q=%23kidslearningcode&src=typd">#kidslearningcode</a></li>
+      </ul>
+
+      <p class="attribution">Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section>
+
+  </main><!-- cls main section -->
+
+  <script src="framework/scripts/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/slideshow.js"></script>
+
+  <!-- Uncomment the plugins you need -->
+  <script src="framework/scripts/plugins/css-edit.js"></script>
+  <script src="framework/scripts/plugins/css-snippets.js"></script>
+  <script src="framework/scripts/plugins/css-controls.js"></script>
+  <!-- <script src="plugins/code-highlight.js"></script>-->
+
+  <script src="framework/scripts/plugins/markdown/marked.js"></script>
+  <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+  <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="framework/scripts/llc.js"></script>
+  <script>
+    var slideshow = new SlideShow();
+
+    // Grabs all the .snippet elements
+    var snippets = document.querySelectorAll('.snippet');
+    for(var i=0; i<snippets.length; i++) {
+      new CSSSnippet(snippets[i]);
+    }
+  </script>
+</body>
+</html>
