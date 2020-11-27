@@ -6,9 +6,9 @@
 
 ## Quick Links
 
-<a href="https://ladieslearningcode.github.io/llc-generative-art-with-javascript/slides-en.html">Preview EN Slides</a>
+<a href="https://ladieslearningcode.github.io/teenslc-generative-art-with-javascript/slides-en.html">Preview EN Slides</a>
 
-<a href="https://docs.google.com/document/d/1AzEDFs45cTlYZfCOT-OBcH-bEkAIb4jC6PoVaznDJfE/edit?usp=sharing"> Preview EN Instructor Notes </a>
+<a href="https://docs.google.com/document/d/1s08g2iaLhxyx0yt6O2JjglH3vHmziK2ql1uJDbuwyxA/edit?usp=sharing"> Preview EN Instructor Notes </a>
 
 # ATTRIBUTIONS:
 
