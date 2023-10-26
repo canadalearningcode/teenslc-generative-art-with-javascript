@@ -4,7 +4,7 @@
 
 ## Quick Links
 
-<a href="https://ladieslearningcode.github.io/teenslc-generative-art-with-javascript/slides-en.html">Preview EN Slides</a>
+<a href="https://canadalearningcode.github.io/teenslc-generative-art-with-javascript/slides-en.html">Preview EN Slides</a>
 
 <a href="https://docs.google.com/document/d/1s08g2iaLhxyx0yt6O2JjglH3vHmziK2ql1uJDbuwyxA/edit?usp=sharing"> Preview EN Instructor Notes </a>
 
